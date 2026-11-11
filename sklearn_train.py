@@ -69,9 +69,6 @@ def parse_args():
     )
     return parser.parse_args()
 
-
-
-
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -93,7 +90,7 @@ def main():
 
     # 2. Train / test split
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.20, stratify=y, random_state=args.random_state
+        X, y, test_size=args.test_size, stratify=y, random_state=args.random_state
     )
     print(f"\nTrain set: {len(X_train)} samples")
     print(f"Test  set: {len(X_test)} samples")
